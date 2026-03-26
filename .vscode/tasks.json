@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Raylib Game",
+      "type": "shell",
+      "command": "C:/msys64/mingw64/bin/g++.exe",
+      "args": [
+        "-std=c++17",
+
+        "-IC:/raylib-5.5_win64_mingw-w64/include",
+        "-LC:/raylib-5.5_win64_mingw-w64/lib",
+
+        "main.cpp",
+        "game.cpp",
+        "menu.cpp",
+
+        "entities/entities.cpp",
+        "entities/players.cpp",
+        "entities/enemy.cpp",
+
+        "systems/collision.cpp",
+        "systems/wavemanager.cpp",
+
+        "-lraylib",
+        "-lopengl32",
+        "-lgdi32",
+        "-lwinmm",
+
+        "-o",
+        "game.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
